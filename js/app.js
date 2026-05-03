@@ -84,4 +84,18 @@ document.addEventListener('DOMContentLoaded', () => {
     li.innerHTML = `<label style="cursor:pointer"><input type="checkbox"> ${item}</label>`;
     clList.appendChild(li);
   });
+
+  // Search Logic (Google Search Integration)
+  const searchForm = document.getElementById('election-search-form');
+  const searchInput = document.getElementById('search-input');
+  
+  if (searchForm) {
+    searchForm.onsubmit = (e) => {
+      e.preventDefault();
+      const term = searchInput.value;
+      if (term) {
+        window.open(`https://www.google.com/search?q=${encodeURIComponent(term + " election official information")}`, '_blank');
+      }
+    };
+  }
 });
