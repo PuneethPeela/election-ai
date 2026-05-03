@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta name="description" content="ElectIQ – AI-powered election process guide for voters"/>
+  <title>ElectIQ – Election Process Assistant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet"/>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ELECTIQ2024"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ELECTIQ2024',{anonymize_ip:true});</script>
+  <link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <nav class="navbar" role="navigation" aria-label="Main navigation" id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="brand" id="nav-brand" aria-label="ElectIQ home">🗳️ <span>ElectIQ</span></a>
+      <ul class="nav-links" role="list">
+        <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
+        <li><a href="#timeline" class="nav-link">Timeline</a></li>
+        <li><a href="#assistant" class="nav-link">Assistant</a></li>
+        <li><a href="#checklist" class="nav-link">Checklist</a></li>
+        <li><a href="#resources" class="nav-link">Resources</a></li>
+      </ul>
+      <button class="hamburger" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu" hidden>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#timeline">Timeline</a>
+      <a href="#assistant">Assistant</a>
+      <a href="#checklist">Checklist</a>
+      <a href="#resources">Resources</a>
+    </div>
+  </nav>
+
+  <header class="hero" role="banner">
+    <div class="hero-bg" aria-hidden="true"><div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div></div>
+    <div class="hero-content">
+      <div class="badge">✨ AI-Powered Civic Guide</div>
+      <h1>Understand Elections.<br><span class="gtext">Make Your Voice Count.</span></h1>
+      <p>ElectIQ guides you through every step of the election process — from registration to results — with smart, interactive tools.</p>
+      <div class="hero-btns">
+        <a href="#assistant" class="btn btn-primary" id="cta-ask">🤖 Ask the Assistant</a>
+        <a href="#how-it-works" class="btn btn-outline" id="cta-guide">📚 Step-by-Step Guide</a>
+      </div>
+      <div class="stats" role="list">
+        <div class="stat" role="listitem"><b>7</b><small>Key Steps</small></div>
+        <div class="stat-div" aria-hidden="true"></div>
+        <div class="stat" role="listitem"><b>50+</b><small>FAQs</small></div>
+        <div class="stat-div" aria-hidden="true"></div>
+        <div class="stat" role="listitem"><b>WCAG</b><small>Accessible</small></div>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="ballot-card">
+        <div class="ballot-top">🗳️ Official Ballot</div>
+        <div class="ballot-row selected">✓ &nbsp;Candidate A</div>
+        <div class="ballot-row">○ &nbsp;Candidate B</div>
+        <div class="ballot-row">○ &nbsp;Candidate C</div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+
+    <section class="section" id="how-it-works" aria-labelledby="h-steps">
+      <div class="container">
+        <div class="sec-hdr">
+          <span class="sec-badge">Step-by-Step</span>
+          <h2 id="h-steps">The Election Process</h2>
+          <p>7 key steps every voter needs to know</p>
+        </div>
+        <div class="steps-grid" id="steps-grid" role="list" aria-label="Election steps"></div>
+      </div>
+    </section>
+
+    <section class="section dark" id="timeline" aria-labelledby="h-timeline">
+      <div class="container">
+        <div class="sec-hdr">
+          <span class="sec-badge">Key Dates</span>
+          <h2 id="h-timeline">Election Timeline</h2>
+          <p>Critical dates throughout the election cycle</p>
+        </div>
+        <div class="tl-filters" role="group" aria-label="Filter timeline" id="tl-filters">
+          <button class="fbtn active" data-f="all" aria-pressed="true">All</button>
+          <button class="fbtn" data-f="registration" aria-pressed="false">Registration</button>
+          <button class="fbtn" data-f="campaign" aria-pressed="false">Campaign</button>
+          <button class="fbtn" data-f="voting" aria-pressed="false">Voting</button>
+          <button class="fbtn" data-f="results" aria-pressed="false">Results</button>
+        </div>
+        <div class="timeline" id="timeline-list" role="list" aria-label="Timeline events"></div>
+      </div>
+    </section>
+
+    <section class="section" id="assistant" aria-labelledby="h-assist">
+      <div class="container">
+        <div class="sec-hdr">
+          <span class="sec-badge">Smart Assistant</span>
+          <h2 id="h-assist">Ask ElectIQ</h2>
+          <p>Context-aware answers about elections</p>
+        </div>
+        <div class="assist-layout">
+          <aside class="topics-panel" aria-label="Popular questions">
+            <h3>Popular Questions</h3>
+            <div id="topic-list" role="list"></div>
+          </aside>
+          <div class="chat-box">
+            <div class="chat-hdr">
+              <div class="c-avatar" aria-hidden="true">🤖</div>
+              <div><div class="c-name">ElectIQ Assistant</div><div class="c-status" aria-live="polite"><span class="dot" aria-hidden="true"></span> Online</div></div>
+              <button class="clear-btn" id="chat-clear" aria-label="Clear chat">🗑️ Clear</button>
+            </div>
+            <div class="chat-msgs" id="chat-messages" role="log" aria-live="polite" aria-label="Conversation" tabindex="0"></div>
+            <div class="chat-foot">
+              <div id="chat-suggestions" role="list" aria-label="Suggestions" class="suggestions"></div>
+              <form id="chat-form" aria-label="Ask a question" class="chat-form">
+                <label for="user-input" class="sr-only">Your question</label>
+                <input id="user-input" type="text" placeholder="Ask about voting, registration, deadlines..." maxlength="300" autocomplete="off"/>
+                <button type="submit" id="chat-send" aria-label="Send">➤</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark" id="checklist" aria-labelledby="h-check">
+      <div class="container">
+        <div class="sec-hdr">
+          <span class="sec-badge">Your Action Plan</span>
+          <h2 id="h-check">Voter Readiness Checklist</h2>
+          <p>Track your progress to become a prepared voter</p>
+        </div>
+        <div class="check-layout">
+          <div class="check-card">
+            <div class="prog-row">
+              <span id="prog-label" aria-live="polite">0 of 8 completed</span>
+              <div class="prog-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="8" id="prog-bar">
+                <div class="prog-fill" id="prog-fill"></div>
+              </div>
+            </div>
+            <ul id="checklist-items" role="list" aria-label="Voter checklist" class="cl-list"></ul>
+            <button class="btn btn-outline" id="reset-checklist" aria-label="Reset checklist" style="margin-top:1rem">🔄 Reset</button>
+          </div>
+          <div class="info-pane" id="info-pane">
+            <div class="info-card" id="info-card">
+              <div class="i-icon">📋</div>
+              <h3 id="info-title">Click an item to learn more</h3>
+              <p id="info-desc">Select any checklist item for detailed guidance.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="resources" aria-labelledby="h-res">
+      <div class="container">
+        <div class="sec-hdr">
+          <span class="sec-badge">Official Sources</span>
+          <h2 id="h-res">Helpful Resources</h2>
+          <p>Trusted links for every voter</p>
+        </div>
+        <div class="res-grid" id="resources-grid" role="list" aria-label="Resources"></div>
+      </div>
+    </section>
+
+    <section class="section dark" id="search-section" aria-labelledby="h-search">
+      <div class="container">
+        <div class="sec-hdr">
+          <span class="sec-badge">Powered by Google</span>
+          <h2 id="h-search">Search Election Info</h2>
+          <p>Find official election information</p>
+        </div>
+        <form class="search-form" id="election-search-form" role="search" aria-label="Search election info">
+          <label for="search-input" class="sr-only">Search</label>
+          <div class="s-group">
+            <span aria-hidden="true">🔍</span>
+            <input id="search-input" type="search" placeholder="e.g. absentee ballot, polling hours..." maxlength="200"/>
+            <button type="submit" id="search-btn">Search</button>
+          </div>
+        </form>
+        <div id="search-results" aria-live="polite" class="s-results"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="f-brand">🗳️ <b>ElectIQ</b><p>Empowering citizens through civic education</p></div>
+      <nav aria-label="Footer links">
+        <h3>Quick Links</h3>
+        <ul role="list">
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#timeline">Timeline</a></li>
+          <li><a href="#assistant">Assistant</a></li>
+          <li><a href="#checklist">Checklist</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h3>Google Services</h3>
+        <ul role="list">
+          <li>📊 Google Analytics (GA4)</li>
+          <li>🔤 Google Fonts</li>
+          <li>🔍 Google Search</li>
+          <li>☁️ Google Cloud Run</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-btm"><p>© 2024 ElectIQ — Informational purposes only.</p></div>
+  </footer>
+
+  <div id="toast" role="status" aria-live="polite" class="toast hidden"></div>
+  <button id="back-top" class="back-top" aria-label="Back to top" hidden>↑</button>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
